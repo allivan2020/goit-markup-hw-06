@@ -633,9 +633,6 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 768px) {
-  .team {
-  }
-
   .team-list {
     flex-direction: row;
     justify-content: center;
@@ -661,13 +658,10 @@ img {
 }
 /* -------------------GALLERY---------------- */
 .gallery {
-  /* padding-left: 156px;
-  padding-right: 156px; */
-  /* padding: 96px 16px; */
+  padding: 96px 28px;
 }
 .gallery-title {
   margin-bottom: 72px;
-  /* text-align: center; */
 
   font-weight: 700;
   font-size: 36px;
@@ -679,7 +673,6 @@ img {
 .gallery-list {
   display: flex;
   align-items: center;
-  /* flex-wrap: wrap; */
   gap: 48px 16px;
 
   flex-direction: column;
@@ -688,7 +681,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: calc((100% - 48px) / 3); */
 }
 .gallery-text-group {
   display: block;
@@ -700,7 +692,7 @@ img {
 .gallery-item-card {
   display: block;
   width: 100%;
-  /* height: auto; */
+  height: auto;
 }
 .cover-text {
   position: absolute;
@@ -746,36 +738,54 @@ img {
   color: var(--slate);
 }
 @media screen and (min-width: 768px) {
+  .gallery {
+    padding: 96px 16px;
+  }
+  .gallery-title {
+    text-align: center;
+  }
+  .gallery-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .gallery-item {
+    width: calc((100% - 24px) / 2);
+  }
 }
 @media screen and (min-width: 1158px) {
+  .gallery {
+    padding-left: 156px;
+    padding-right: 156px;
+  }
+  .gallery-item {
+    width: calc((100% - 48px) / 3);
+  }
 }
 /* -------------------FOOTER---------------- */
 .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  text-align: start;
+  padding: 96px 16px;
   background-color: var(--navy-blue);
 }
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+
+  flex-direction: column;
+  align-items: center;
 }
 .footer-text-group {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
-  margin-right: 120px;
+  align-items: center;
 }
 .footer-text-group .footer-logo {
   display: inline-block;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 
   font-family: var(--second-family);
   font-weight: 700;
   font-size: 18px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--cloud);
@@ -784,7 +794,8 @@ img {
   color: var(--iris);
 }
 .footer-text {
-  max-width: 264px;
+  margin-bottom: 72px;
+  max-width: 288px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -794,6 +805,9 @@ img {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  align-items: center;
+  margin-bottom: 72px;
 }
 .footer-soc-title {
   margin-bottom: 16px;
@@ -820,7 +834,11 @@ img {
 .footer-link:focus {
   background-color: #31d0aa;
 }
-
+.footer-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .input-text {
   margin-bottom: 16px;
   font-weight: 500;
@@ -832,15 +850,17 @@ img {
 .footer-input-form {
   display: flex;
   align-items: center;
-}
-.footer-lable {
+
+  flex-direction: column;
+  gap: 16px;
 }
 .footer-input-mail {
   padding: 8px 16px;
   border: 1px solid var(--white);
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  opacity: 0.3;
 
   outline: transparent;
   background-color: transparent;
@@ -857,7 +877,7 @@ img {
 
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.15;
   letter-spacing: 0.04em;
   text-align: center;
   color: var(--white);
@@ -878,10 +898,52 @@ img {
   fill: var(--white);
 }
 @media screen and (min-width: 768px) {
+  .footer {
+    padding: 96px 108px;
+  }
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-input-form {
+    flex-direction: row;
+  }
+  .input-text {
+    margin-right: auto;
+  }
+  .footer-text {
+    margin-right: 24px;
+  }
 }
 @media screen and (min-width: 1158px) {
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: start;
+  }
+  .footer-container {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .footer-text-group {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 120px;
+  }
+  .footer-text {
+    max-width: 264px;
+  }
+  .footer-soc {
+    align-items: flex-start;
+    margin-right: 80px;
+  }
+  .footer-input-mail {
+    width: 264px;
+  }
 }
-/* ----------MODAL------------ */
+
+/* -------------------MODAL--------------------- */
 .backdrop {
   background-color: var(--navy-blue-modal);
   position: fixed;
@@ -900,16 +962,16 @@ img {
   pointer-events: visible;
 } */
 .modal {
-  padding: 24px;
-  width: 484px;
+  padding: 24px 16px;
+  width: 288px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background: var(--dairy);
   border-radius: 4px;
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 8px;
+  transform: translate(-50%);
 }
 .modal-close {
   display: flex;
@@ -945,7 +1007,8 @@ img {
   margin-bottom: 16px;
 }
 .modal-input-group {
-  margin-bottom: 16px;
+  max-width: 256px;
+  margin-bottom: 8px;
 }
 .modal-lable {
   font-size: 12px;
@@ -985,6 +1048,8 @@ img {
   fill: var(--iris);
 }
 .modal-textarea {
+  margin-bottom: 16px;
+
   width: 100%;
   outline: transparent;
   height: 120px;
@@ -1059,8 +1124,12 @@ img {
 
 .checkbox-label {
   display: flex;
-  justify-content: center;
+
+  /* justify-content: center; */
   align-items: center;
+
+  flex-wrap: wrap;
+  justify-content: flex-start;
 
   font-weight: 400;
   font-size: 12px;
@@ -1076,10 +1145,27 @@ img {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--iris);
-  margin-left: 4px;
+  margin-left: 24px;
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
+  .modal {
+    padding: 24px;
+    width: 408px;
+    top: 96px;
+  }
+  .modal-input-group {
+    max-width: 360px;
+    margin-bottom: 16px;
+  }
+  .label-link {
+    margin-left: 4px;
+  }
 }
 @media screen and (min-width: 1158px) {
+  .modal {
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
